@@ -6,7 +6,7 @@ const server = app.listen(8080, function(){
 });
 
 app.set('view engine', 'ejs');
-app.set('views', './src/views');
+app.set('views', __dirname + '/views');
 app.get('/', (req, res) => {
     res.render('index')
 });
