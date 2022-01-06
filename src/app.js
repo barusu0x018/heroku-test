@@ -1,14 +1,19 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 8080;
+const mime = {
+  ".html": "text/html",
+  ".css": "text/css"
+  // 読み取りたいMIMEタイプはここに追記
+};
 
-const server = app.listen(port, function(){
-    console.log("Node.js is listening to PORT:" + server.address().port);
+const server = app.listen(port, function () {
+  console.log("Node.js is listening to PORT:" + server.address().port);
 });
 
-app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
-app.use('statics', express.static(__dirname + '/statics'));
-app.get('/', (req, res) => {
-    res.render('index')
+app.set("view engine", "ejs");
+app.set("views", __dirname + "/views");
+app.use('/statics', express.static(__dirname + "/statics"));
+app.get("/", (req, res) => {
+  res.render("index");
 });
