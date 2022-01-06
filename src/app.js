@@ -17,7 +17,8 @@ const server = app.listen(port, function () {
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
-app.use('/statics', express.static(__dirname + "/statics"));
+/* 下記の指定で静的ファイルのアクセスは "http://localhost:XXXX/statics/hoge.html" という形になる */
+app.use('/statics', express.static(__dirname + '/statics'));
 app.get("/", (req, res) => {
   res.render("index");
 });
