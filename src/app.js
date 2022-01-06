@@ -1,3 +1,7 @@
+/* 動的モジュール(このモジュールとか)は修正後に逐一「heroku local web」コマンドを打たないと 
+　 確認出来ないので注意
+*/
+
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 8080;
