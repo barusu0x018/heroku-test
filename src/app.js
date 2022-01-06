@@ -8,7 +8,7 @@ const server = app.listen(port, function(){
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
-app.use('test', express.static(__dirname + '/test'));
+app.use('statics', express.static(__dirname + '/statics'));
 app.get('/', (req, res) => {
     res.render('index')
 });
